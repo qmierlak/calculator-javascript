@@ -28,8 +28,15 @@ const num1 = 0;
 const operator = null;
 const num2 = 0;
 
-let displayVal = 0;
+let displayVal = "";
 
+let allButtons = document.querySelectorAll(".num");
+for (let button of allButtons) {
+    button.addEventListener('click',(event) => {
+        console.log(button.id);
+        //document.getElementById("display").innerHTML = button.id;
+    });
+}
 
 // add(5,3)
 // subtract(5,3)
