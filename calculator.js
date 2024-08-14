@@ -29,14 +29,21 @@ const operator = null;
 const num2 = 0;
 
 let displayVal = "";
+document.getElementById("display").innerHTML = displayVal;
 
-let allButtons = document.querySelectorAll(".num");
-for (let button of allButtons) {
+let numButtons = document.querySelectorAll(".num");
+for (let button of numButtons) {
     button.addEventListener('click',(event) => {
         console.log(button.id);
-        //document.getElementById("display").innerHTML = button.id;
+        document.getElementById("display").innerHTML += button.id;
     });
 }
+
+clearButton = document.querySelector("#clear");
+clearButton.addEventListener('click',(event) => {
+    console.log(clearButton.id);
+    document.getElementById("display").innerHTML = "";
+});
 
 // add(5,3)
 // subtract(5,3)
