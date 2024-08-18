@@ -1,19 +1,31 @@
 
 function add(a, b) {
+    a = Number(a);
+    b = Number(b);
     const result = a + b;
     console.log(result);
+    return result;
 }
 function subtract(a, b) {
+    a = Number(a);
+    b = Number(b);
     const result = a - b;
     console.log(result);
+    return result;
 }
 function multiply(a, b) {
+    a = Number(a);
+    b = Number(b);
     const result = a * b;
     console.log(result);
+    return result;
 }
 function divide(a, b) {
+    a = Number(a);
+    b = Number(b);
     const result = a / b;
     console.log(result);
+    return result;
 }
 
 
@@ -58,6 +70,31 @@ for (let button of operatorButtons) {
     });
 }
 
+equalsButton = document.querySelector("#equals");
+equalsButton.addEventListener('click',(event)=> {
+    console.log(equalsButton.id);
+    
+    if (num1 !== null && num2 === null && operator !== null) {
+        num2 = document.getElementById("display").innerHTML;
+        console.log("num1 is now: " + num1);
+        console.log("num2 is now: " + num2);
+
+        // call operate 
+        if(operator === "plus") {
+            document.getElementById("display").innerHTML = add(num1,num2);
+        }
+        if(operator === "minus") {
+            
+        }
+        if(operator === "times") {
+            
+        }
+        if(operator === "divide") {
+            
+        }
+    }
+
+})
 
 
 clearButton = document.querySelector("#clear");
