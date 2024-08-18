@@ -2,7 +2,12 @@ Here's what I'm thinking for the logic:
 
 There will be boolean variables to track whether num1 has been entered
 
-When you click + - * or /, it will take the display value and save that to num1.
+When you click + - * or /, it will take the display value and save that to num1
+it should also store the operator to calculate once you hit equals
 
 Clear sets the boolean for both num1 and 2 to 0.
 
+When you click equals, it will save the display value into num 2 and then call
+operate on the operator you clicked with num1 and display the result.  Any button
+press after that should essentially call clear before displaying numbers'
+and reset the boolean values

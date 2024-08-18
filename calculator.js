@@ -1,5 +1,3 @@
-console.log("Hello world")
-
 
 function add(a, b) {
     const result = a + b;
@@ -24,9 +22,9 @@ function operate(a, b) {
     add(a,b);
 }
 
-const num1 = 0;
-const operator = null;
-const num2 = 0;
+let num1 = null;
+let operator = null;
+let num2 = null;
 
 let displayVal = "";
 document.getElementById("display").innerHTML = displayVal;
@@ -39,10 +37,36 @@ for (let button of numButtons) {
     });
 }
 
+
+let operatorButtons = document.querySelectorAll(".operator");
+for (let button of operatorButtons) {
+    button.addEventListener('click',(event) => {
+        //console.log(button.innerHTML);
+        //document.getElementById("display").innerHTML += button.id;
+
+        if(num1 === null) {
+            num1 = document.getElementById("display").innerHTML;
+            console.log("num1 is now: " + num1);
+
+            document.getElementById("display").innerHTML = "";
+
+            operator = button.id;
+            console.log("operator is now: " + operator);
+        }
+
+
+    });
+}
+
+
+
 clearButton = document.querySelector("#clear");
 clearButton.addEventListener('click',(event) => {
     console.log(clearButton.id);
     document.getElementById("display").innerHTML = "";
+    num1 = null;
+    num2 = null;
+    operator = null;
 });
 
 // add(5,3)
