@@ -44,6 +44,14 @@ document.getElementById("display").innerHTML = displayVal;
 let numButtons = document.querySelectorAll(".num");
 for (let button of numButtons) {
     button.addEventListener('click',(event) => {
+
+        if(num1 !== null && num2 !== null && operator != null) {
+            document.getElementById("display").innerHTML = "";
+            num1 = null;
+            num2 = null;
+            operator = null;
+        }
+
         console.log(button.id);
         document.getElementById("display").innerHTML += button.id;
     });
@@ -84,13 +92,15 @@ equalsButton.addEventListener('click',(event)=> {
             document.getElementById("display").innerHTML = add(num1,num2);
         }
         if(operator === "minus") {
-            
+            document.getElementById("display").innerHTML = subtract(num1,num2);
+
         }
         if(operator === "times") {
-            
+            document.getElementById("display").innerHTML = multiply(num1,num2);
+
         }
         if(operator === "divide") {
-            
+            document.getElementById("display").innerHTML = divide(num1,num2);
         }
     }
 
